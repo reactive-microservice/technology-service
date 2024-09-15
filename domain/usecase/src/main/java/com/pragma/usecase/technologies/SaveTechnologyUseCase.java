@@ -14,8 +14,8 @@ public class SaveTechnologyUseCase {
 
     public Mono<Technology> action(Technology technology) {
         return repository.findByName(technology.getName())
-                .flatMap(existingTech -> Mono.error(new IllegalArgumentException("Name already used")))
-                .switchIfEmpty(repository.save(technology))
-                .cast(Technology.class);
+                .flatMap(existingTech -> Mono.error(new IllegalArgumentException("Name already used"))
+                            .cast(Technology.class))
+                .switchIfEmpty(repository.save(technology));
     }
 }
