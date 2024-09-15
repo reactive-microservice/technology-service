@@ -1,4 +1,4 @@
-package com.pragma.technology_service.domain;
+package com.pragma.model.technology;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

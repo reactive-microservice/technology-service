@@ -1,8 +1,8 @@
-package com.pragma.technology_service.domain.gateways;
+package com.pragma.model.technology.gateways;
 
-import com.pragma.technology_service.domain.Technology;
+import com.pragma.model.technology.Technology;
+
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Mono;
 
 public interface TechnologyRepository extends ReactiveMongoRepository<Technology,String> {
