@@ -16,6 +16,7 @@ public class RouterRest {
     @Bean
     public RouterFunction<ServerResponse> routerFunction(Handler handler) {
         return route(GET("/api/technology/{page}/{size}/{asc}"), handler::listenGETFindAllTechnologiesUseCase)
-                .andRoute(POST("/api/technology"), handler::listenPOSTSaveTechnologyUseCase);
+                .andRoute(POST("/api/technology"), handler::listenPOSTSaveTechnologyUseCase)
+                .andRoute(GET("/api/technology/{id}"), handler::listenGETFindTechnologyByIdUseCase);
     }
 }
