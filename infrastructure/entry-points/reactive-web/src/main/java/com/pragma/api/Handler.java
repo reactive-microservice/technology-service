@@ -28,9 +28,9 @@ public class Handler {
     }
 
     public Mono<ServerResponse> listenGETFindAllTechnologiesUseCase(ServerRequest request) {
-        Integer page = Integer.valueOf(request.queryParam("page").orElse("0"));
-        Integer size = Integer.valueOf(request.queryParam("size").orElse("10"));
-        Boolean asc = Boolean.valueOf(request.queryParam("asc").orElse("true"));
+        Integer page = Integer.valueOf(request.pathVariable("page"));
+        Integer size = Integer.valueOf(request.pathVariable("size"));
+        Boolean asc = Boolean.valueOf(request.pathVariable("asc"));
 
         return ServerResponse.ok().body(findAllTechnologiesUseCase.action(page, size, asc), Technology.class);
     }
